@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: oscar-ui
+spec:
+  template:
+    metadata:
+      labels:
+        app: oscar-ui
+    spec:
+      containers:
+        - name: oscar-ui
+          image: dianamnaranjo/dockerize-oscar-ui
+          
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: oscar-ui-service
+spec:  
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 80
+      protocol: TCP
+      nodePort: 31371
+  selector:
+    app: oscar-ui
+  
+  

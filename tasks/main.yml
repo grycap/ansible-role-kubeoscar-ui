@@ -1,0 +1,6 @@
+---
+- name: Create deployment and expose service  
+  block:
+    - copy: src=deploy-service-oscarui.yml dest=/tmp/deploy-service-oscarui.yml
+    - command: kubectl apply -f /tmp/deploy-service-oscarui.yml
+
