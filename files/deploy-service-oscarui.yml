@@ -17,14 +17,16 @@ apiVersion: v1
 kind: Service
 metadata:
   name: oscar-ui-service
+  labels: 
+    run: oscar-ui
 spec:  
-  type: NodePort
+  selector:
+    run: oscar-ui  
   ports:
     - port: 8080
       targetPort: 80
       protocol: TCP
-      nodePort: 31371
-  selector:
-    app: oscar-ui
+      nodePort: 31371  
+  type: NodePort
   
   
