@@ -12,6 +12,21 @@ spec:
         - name: oscar-ui
           image: grycap/oscar-ui
           
-
-  
-  
+---  
+apiVersion: v1
+kind: Service
+metadata:  
+  labels:
+    run: oscar-ui
+  name: oscar-ui-service  
+spec:  
+  ports:
+  - nodePort: 31137
+    port: 8080
+    protocol: TCP
+    targetPort: 80
+  selector:
+    run: oscar-ui  
+  type: NodePort
+status:
+  loadBalancer: {}
