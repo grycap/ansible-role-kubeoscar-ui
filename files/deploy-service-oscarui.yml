@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
         - name: oscar-ui
-          image: dianamnaranjo/dockerize-oscar-ui
+          image: grycap-/oscar-ui
           
 ---
 apiVersion: v1
