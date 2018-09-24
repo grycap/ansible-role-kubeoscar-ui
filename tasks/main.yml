@@ -1,6 +1,9 @@
 ---
-- name: Create deployment and expose service  
+- name: Create deployment  
   block:
     - copy: src=deploy-service-oscarui.yml dest=/tmp/deploy-service-oscarui.yml
     - command: kubectl apply -f /tmp/deploy-service-oscarui.yml
 
+- name: Expose service  
+  block:    
+    - command: kubectl expose oscar-ui --port=8080 --target-port=80 --type=NodePort
