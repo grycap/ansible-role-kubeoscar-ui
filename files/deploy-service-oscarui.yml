@@ -17,8 +17,8 @@ apiVersion: v1
 kind: Service
 metadata:  
   labels:
-    run: oscar-ui
-  name: oscar-ui-service  
+    app: oscar-ui
+  name: oscar-ui
 spec:  
   ports:
   - nodePort: 31137
@@ -26,7 +26,7 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    run: oscar-ui  
+    app: oscar-ui  
   type: NodePort
 status:
   loadBalancer: {}
