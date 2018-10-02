@@ -11,7 +11,9 @@ spec:
       containers:
         - name: oscar-ui
           image: grycap/oscar-ui
-          
+          env : 
+            - name: VUE_APP_BACKEND_HOST "{{vue_app_backend_host}}"
+              value: "{{vue_app_backend_host}}"
 ---  
 apiVersion: v1
 kind: Service
@@ -20,11 +22,11 @@ metadata:
     app: oscar-ui
   name: oscar-ui
 spec:  
-  ports:
-  - nodePort: 31137
-    port: 8080
+  ports:  
+  - nodePort: 31114
+    port: 3000
     protocol: TCP
-    targetPort: 80
+    targetPort: 3000
   selector:
     app: oscar-ui  
   type: NodePort
