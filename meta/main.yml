@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: oscarui
+  role_name: kubeoscarui
   author: dnaranjo@i3m.upv.es
   description: Install User Interface of OSCAR
   company: GRyCAP
