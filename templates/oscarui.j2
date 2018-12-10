@@ -2,6 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: oscar-ui
+  namespace: oscar
 spec:
   template:
     metadata:
@@ -25,6 +26,7 @@ metadata:
   labels:
     app: oscar-ui
   name: oscar-ui
+  namespace: oscar
 spec:  
   ports:  
   - nodePort: 31114
