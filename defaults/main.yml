@@ -1,5 +1,5 @@
 oscar_ui_nodeport: 443
 oscar_ui_version: latest
-vue_app_backend_host: "https://localhost:3000"
+vue_app_backend_host: "https://localhost:{{oscar_ui_nodeport}}"
 minio_user: "minio"
 minio_pass: "minio123"
