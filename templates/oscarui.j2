@@ -25,6 +25,12 @@ spec:
               value: "{{ minio_user }}"
             - name: MINIO_SECRET_KEY
               value: "{{ minio_pass }}"
+{% if master_deploy %}
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+        effect: NoSchedule
+{% endif %}
 ---  
 apiVersion: v1
 kind: Service
